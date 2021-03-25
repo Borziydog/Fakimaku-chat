@@ -1,0 +1,28 @@
+{
+  "name": "Fakimaku",
+  "version": "0.0.2",
+  "description": "Fakimaku - ditch Discord and Electron!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Borziydog/chat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Borziydog/chat/issues"
+  },
+  "homepage": "https://github.com/Borziydog/chat#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-ws": "^4.0.0",
+    "node-fetch": "^2.6.1",
+    "mongodb": "^3.6.4",
+    "mongoose": "^5.12.1",
+    "sqlite3": "^5.0.2",
+    "body-parser": "1.19.0"
+  }
+}
