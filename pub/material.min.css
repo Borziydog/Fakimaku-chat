@@ -6,9 +6,6 @@
  * @link https://github.com/google/material-design-lite
  */
 @charset "UTF-8";
-html {
-  color: rgba(0, 0, 0, 0.87);
-}
 * {
   margin: 0;
   padding: 0;
@@ -18,18 +15,6 @@ html {
 }
 html {
   height: 100%;
-}
-body {
-  display: grid;
-  min-height: 100%;
-  grid-template-rows: 1fr auto;
-  background: #23272A;
-  margin: 0;
-  width: 100%;
-  min-height: 100%;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 14px;
-  line-height: 20px;
 }
 .send {
   grid-row-start: 2;
@@ -207,7 +192,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: -0.02em;
@@ -222,7 +207,7 @@ h1 {
 }
 h1,
 h2 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 400;
 }
 h2 {
@@ -239,7 +224,7 @@ h3 {
 }
 h3,
 h4 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 400;
 }
 h4 {
@@ -256,7 +241,7 @@ h5 {
 }
 h5,
 h6 {
-    font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 24px 0 16px;
 }
 h6 {
@@ -2777,7 +2762,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 .mdl-chip {
   height: 32px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
   line-height: 32px;
   padding: 0 12px;
   border: 0;
@@ -2792,31 +2777,34 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
   font-size: 13px;
   vertical-align: middle;
   font-weight: 300;
-  white-space: pre-wrap; 
+  white-space: pre-wrap;
   overflow-wrap: break-word;
 }
 
 .e-mdl-chip {
-  min-height: 32px;
-  font-family: 'Ubuntu', sans-serif;
-  line-height: 32px;
-  padding: 0 12px;
+  min-height: 25px;
+  font-family: "Ubuntu", sans-serif;
+  width: 90%;
+  line-height: 25px;
+  padding: 0 5px;
   border: 0;
-  border-radius: 16px;
+  border-radius: 4px;
   background-color: #dedede;
   display: inline-block;
   color: rgba(0, 0, 0, 0.87);
-  margin: 2px 0;
+  margin: 1px 0;
   font-size: 0;
-  word-wrap: break-word;
+  word-break: break-all;
   overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .e-mdl-chip__text {
   font-size: 13px;
   vertical-align: middle;
   font-weight: 300;
-  word-wrap: break-word;
+  word-break: break-all;
   overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 .mdl-chip__action {
   height: 24px;
