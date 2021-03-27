@@ -1,0 +1,99 @@
+body {
+  background-color: #23272A;
+}
+footer {
+  background-color: #424242;
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 25%;
+}
+.footer-h1 {
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.solid {
+  border-top: 1px solid #7289da;
+}
+p {
+  color: #fff;
+  margin: 0;
+  font-size: 14px;
+  margin-left: 5px;
+}
+.p-big {
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+  margin-left: 5px;
+}
+a {
+  text-decoration: none;
+}
+.link {
+  text-decoration: none;
+  color: #9e9e9e;
+}
+.link:hover {
+  text-decoration: underline;
+  color: #9e9e9e;
+}
+.slogan {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: 140px;
+}
+/* эту кнопку я сам писал кста */
+.open {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 1.76px;
+  text-transform: uppercase;
+  border: 1px solid;
+  border-radius: 500px;
+  color: #fff;
+  will-change: transform;
+  white-space: nowrap;
+  padding: 8px 34px;
+  display: block;
+  margin: auto;
+  cursor: pointer;
+  text-align: center;
+  color: #FFF;
+  background-color: #000;
+}
+.open:hover {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  border: 2px solid;
+  size: 32px;
+}
+@media only screen and (max-width: 600px) {
+  .slogan {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-top: 100px;
+  }
+  footer {
+  background-color: #424242;
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 27%;
+  }
+}

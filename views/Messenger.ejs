@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <title>⚡️Fakimaku⚡️ - легковесный чат</title>
-        <link rel="stylesheet" href="main-page.css">
+    <link rel="stylesheet" href="material.min.css" />
     <script src="material.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="https://m4r5ha11.com/assets/icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="jquery.js"></script>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -13,35 +13,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#512da8">
+      rel="stylesheet">
+        <meta name="theme-color" content="#512da8">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://fakimaku.glitch.me/">
     <meta property="og:title" content="Fakimaku">
     <meta property="og:description" content="Легковесная web-альтернатива Telegram, Discord и других месенджеров. Ваше легковесное место для общения. Прямо в браузере, бесплатно!">
 <meta itemprop="keywords" name="keywords" content="дискорд, общение, телеграм, телеграмм, чат, чаты, групповое общение, чат бесплатно, общение бесплатно, бесплатно, fakimaku, Fakimaku, факимаку, Факимаку">
-      <meta http-equiv="content-language" content="ru">
+    <meta http-equiv="content-language" content="ru">
 <meta name="msapplication-starturl" content="/">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="msapplication-TileColor" content="#512da8">
 <link rel="manifest" href="/manifest.json">
 <meta property="og:image" content="https://m4r5ha11.com/assets/bigicon.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fakimaku</title>
   </head>
   <body>
-       <h1 class="slogan">Ваше легковесное место для общения.<br>Прямо в браузере, бесплатно!</h1>
-      <a href="/reg"><button class="open">Начать общение!</button></a>
-       <footer>
-     <hr class="solid">
-       <h1 class="footer-h1">Bаше легковесное место для общения</h1>
-          <b><p class="p-big">Продукт</p></b>
-         <br><a class="link" href="/news"><p>Новости</p></a>
-         <br><a class="link" href="/devs"><p>Разработчики</p></a>
-         <br><a class="link" href="/news"><p>Правила</p></a>
-  </footer>
+    <style>
+      .mdl-chip__text {
+        word-wrap: break-word; /* old name */
+        overflow-wrap: break-word;
+      }
+    </style>
+      <center>
+        <button
+          onclick="connect()"
+          class="mdl-chip mdl-chip--deletable mdl-chip-connect">
+          <span class="mdl-chip__text">Присоеденится</span>
+          <span type="button" class="mdl-chip__action">
+            <i id="connect-icon" class="material-icons">add</i>
+          </span>
+        </button>
+      </center>
+        <div id="wrapper">
+        <div id="messages" style="overflow:auto; overflow-x:hidden; height: 70vh;"></div>
+        </div>
+    <div class="mdl-textfield mdl-js-textfield" style="width: 90%;">
+        <textarea type="text" spellcheck="false" autocomplete="off" class="inputbox" id="msgbox"></textarea>
+        <button id="sendm" class="mdl-button mdl-js-button mdl-button--icon send" style="margin-bottom: +15px; background: #333;" onclick="send()"><i style="color:white;" class="material-icons">send</i></button>
+      </div>
+    <noscript>
+      <style>
+        * {
+          display: none;
+        }
+      </style>
+    </noscript>
+    <script src="index.js"></script>
   </body>
 </html>

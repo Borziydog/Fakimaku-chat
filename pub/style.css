@@ -1,0 +1,190 @@
+body {
+    background-color: #23272A; 
+    display: grid;
+    min-height: 100%;
+    grid-template-rows: 1fr auto;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+.main {
+  background-color: #23272A; 
+}
+*::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+ 
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+*::-moz-scrollbar {
+  width: 1em;
+}
+ 
+*::-moz-scrollbar-track {
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+ 
+*::-moz-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.reg-h1 {
+         font-size: 24px;
+         font-weight: 700;
+         font-family: "Ubuntu", sans-serif;
+         color: #fff;
+}
+.submit {  
+         border: 0;
+         border-radius: 5px;
+         margin: 5px;
+         padding: 10px;
+         background-color: #388e3c;
+         color: #fff;
+}
+.reg {
+         background-color: #212121;
+         font-family: "Ubuntu", sans-serif;
+         color: #fff;
+        height: 700px;
+        width: 100%;
+        display: block;
+        margin: auto;
+}
+input {
+  border-radius: 10px;
+  border: 1px solid #fff;
+  margin: 5px;
+  outline: none;
+}
+.ping {
+  font-weight: 500;
+    color: #7289DA;
+    text-shadow: #cad5e2 1px 1px 0, #cad5e2 2px 2px 0, 
+                 #cad5e2 3px 3px 0, #cad5e2 4px 4px 0, 
+                 #cad5e2 5px 5px 0;
+
+}
+.inputbox {
+  width: 100%; 
+  background: #3f3f3f; 
+  outline: none; 
+  white-space: pre-wrap; 
+  overflow-wrap: break-word; 
+  -webkit-user-modify: read-write-plaintext-only; 
+  color: white; 
+  padding-left: 2px; 
+  margin: 10px; 
+  border-radius: 10px; 
+  border: 1px dashed white;
+  resize: none;
+  -moz-appearance: none;
+  font-family: "Ubuntu", sans-serif;
+  margin-left: 53px;
+}
+footer {
+  background-color: #424242;
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 30%;
+}
+.footer-h1 {
+  font-family: "Ubuntu", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+.solid {
+   border-top: 1px solid #7289da;
+}
+p {
+color: #fff;
+margin: 0;
+font-size: 14px;
+  margin-left: 5px;
+}
+.p-big {
+color: #fff;
+margin: 0;
+font-size: 16px;
+    margin-left: 5px;
+}
+a {
+  text-decoration: none;
+  color: #eee;
+}
+a:hover {
+  text-decoration: underline;
+}
+.ft-tb {
+  display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-template-columns: repeat(var(--num-grid-columns),1fr);
+}
+.ft-gr {
+   background-color: #424242;
+  font-family: "Ubuntu", sans-serif;
+  height: 400px;
+}
+.content {
+  background-color: #1a1a1a;
+}
+.slogan {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 900;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin-top: 140px;
+}
+/* эту кнопку я сам писал кста */
+   .open { 
+      font-size: 12px;
+        line-height: 18px;
+        font-weight: 700;
+        letter-spacing: 1.76px;
+        text-transform: uppercase;
+        border: 1px solid;
+        border-radius: 500px;
+        color: #fff;
+        will-change: transform;
+        white-space: nowrap;
+        padding: 8px 34px;
+        display: block;
+        margin: auto;
+        cursor: pointer;
+        text-align: center;
+        color: #FFF;
+        background-color: #000;  
+}
+ .open:hover {
+    font-size: 13px;
+    font-weight: 800;
+    color: #fff;
+    border: 2px solid #fff;
+    size: 32px;
+} 
+@media only screen and (max-width: 600px) {
+  footer {
+  background-color: #424242;
+  font-family: "Ubuntu", sans-serif;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  }
+}
