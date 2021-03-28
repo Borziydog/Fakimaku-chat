@@ -187,4 +187,21 @@ a:hover {
   width: 100%;
   height: 35%;
   }
+  .inputbox {
+    width: 88%; 
+    background: #3f3f3f; 
+    outline: none; 
+    white-space: pre-wrap; 
+    overflow-wrap: break-word; 
+    -webkit-user-modify: read-write-plaintext-only; 
+    color: white; 
+    padding-left: 2px; 
+    margin: 10px; 
+    border-radius: 10px; 
+    border: 1px dashed white;
+    resize: none;
+    -moz-appearance: none;
+    font-family: "Ubuntu", sans-serif;
+    margin-left: 53px;
+  }
 }
