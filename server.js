@@ -4,6 +4,7 @@ const config = require('./config.json');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const MongoStore = require('connect-mongo');
+const crypto = require('crypto');
 var session = require('express-session');
 var db;
 var MongoClient = require('mongodb').MongoClient;
@@ -37,25 +38,45 @@ app.get('/reg', function(req, res, next) {
       
 });
 app.post("/reg",  function (req, res) { 
-    if(!req) return res.sendStatus(400);
+    if(!req.body.name) return res.sendStatus(400);
+    if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
-    collection.insertOne({"name": req.body.name,"password": req.body.pass}); 
-    res.redirect("/");
+    var name = req.body.name;
+    if (collection.findOne({"name": req.body.name})) { 
+      res.redirect("/reg");
+      return;
+    } else {
+      collection.insertOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+      res.redirect("/login"); 
+    }
 });
 app.get('/login', function (req,res) {
   res.sendFile(__dirname + "/login.html");
 });
 app.post("/login",  function (req, res) { 
-    if(!req) return res.sendStatus(400);
+    if(!req.body.name) return res.sendStatus(400);
+    if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
-    let data = collection.findOne({"name": req.body.name,"password": req.body.pass}); 
-    if (!data) res.redirect("/reg");
-        
-    req.session.user = data
-    res.redirect("/");
+    let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+    if (!data) { 
+      res.redirect("/reg");
+    } else {
+      if(data.password !== Base64.stringify(req.body.pass)) return res.redirect("/login");
+      req.session.user = data;
+      res.redirect("/app");
+    }
 });
 app.get('/app', function (req, res) {
-  res.render("Messenger");
+  if (!req.session.user) {
+    res.redirect("/reg")
+  } else {
+    let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+    if (!data) {
+      res.render("Messenger");
+    } else {
+      res.redirect("/reg")
+    }
+  }
 }); 
 
 
