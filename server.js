@@ -70,6 +70,7 @@ app.get('/app', function (req, res) {
   if (!req.session.user) {
     res.redirect("/reg")
   } else {
+    const collection = db.collection('users');
     let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
     if (!data) {
       res.render("Messenger");
