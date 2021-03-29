@@ -4,6 +4,7 @@ const config = require('./config.json');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const MongoStore = require('connect-mongo');
+const Base64 = require('crypto-js/enc-base64');
 var session = require('express-session');
 var db;
 var MongoClient = require('mongodb').MongoClient;
@@ -40,7 +41,7 @@ app.post("/reg",  function (req, res) {
     if(!req) return res.sendStatus(400);
     const collection = db.collection('users');
     collection.insertOne({"name": req.body.name,"password": req.body.pass}); 
-    res.redirect("/");
+    res.redirect("/app");
 });
 app.get('/login', function (req,res) {
   res.sendFile(__dirname + "/login.html");
