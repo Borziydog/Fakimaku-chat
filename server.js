@@ -61,7 +61,7 @@ app.post("/login",  function (req, res) {
     if (!data) { 
       res.redirect("/reg");
     } else {
-      if(data.password !== Base64.stringify(req.body.pass)) return res.redirect("/login");
+      if(data.password !== crypto.createHash('md5').update(req.body.pass).digest('hex')) return res.redirect("/login");
       req.session.user = data;
       res.redirect("/app");
     }
