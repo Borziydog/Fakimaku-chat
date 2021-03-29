@@ -38,7 +38,8 @@ app.get('/reg', function(req, res, next) {
       
 });
 app.post("/reg",  function (req, res) { 
-    if(!req) return res.sendStatus(400);
+    if(!req.body.name) return res.sendStatus(400);
+    if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
     var name = req.body.name
     if (name.includes("@") || name.includes("#") || name.includes("z")) return res.redirect("/app");
@@ -55,7 +56,8 @@ app.get('/login', function (req,res) {
   res.sendFile(__dirname + "/login.html");
 });
 app.post("/login",  function (req, res) { 
-    if(!req) return res.sendStatus(400);
+    if(!req.body.name) return res.sendStatus(400);
+    if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
     let data = collection.findOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)}); 
     if (!data) { 
