@@ -67,7 +67,16 @@ app.post("/login",  function (req, res) {
     }
 });
 app.get('/app', function (req, res) {
-  res.render("Messenger");
+  if (!req.session.user) {
+    res.redirect("/reg")
+  } else {
+    let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+    if (!data) {
+      res.render("Messenger");
+    } else {
+      res.redirect("/reg")
+    }
+  }
 }); 
 
 
