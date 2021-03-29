@@ -40,8 +40,16 @@ app.get('/reg', function(req, res, next) {
 app.post("/reg",  function (req, res) { 
     if(!req) return res.sendStatus(400);
     const collection = db.collection('users');
-    collection.insertOne({"name": req.body.name,"password": req.body.pass}); 
-    res.redirect("/app");
+    var name = req.body.name
+    if (name.includes("@") || name.includes("#") || name.includes("z")) return res.redirect("/app");
+    if (collection.findOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)})) { 
+      res.redirect("/reg");
+      return;
+    } else {
+      collection.insertOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)}); 
+      res.cookie('acc', req.body.name + "@" + req.body.pass, { maxAge: 900000, httpOnly: true })
+      res.redirect("/app"); 
+    }
 });
 app.get('/login', function (req,res) {
   res.sendFile(__dirname + "/login.html");
@@ -49,11 +57,14 @@ app.get('/login', function (req,res) {
 app.post("/login",  function (req, res) { 
     if(!req) return res.sendStatus(400);
     const collection = db.collection('users');
-    let data = collection.findOne({"name": req.body.name,"password": req.body.pass}); 
-    if (!data) res.redirect("/reg");
-        
-    req.session.user = data
-    res.redirect("/");
+    let data = collection.findOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)}); 
+    if (!data) { 
+      res.redirect("/reg");
+    } else {
+      if(data.password !== Base64.stringify(req.body.pass)) return res.redirect("/login");
+      req.session.user = data;
+      res.redirect("/app");
+    }
 });
 app.get('/app', function (req, res) {
   res.render("Messenger");
