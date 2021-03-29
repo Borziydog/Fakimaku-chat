@@ -4,7 +4,7 @@ const config = require('./config.json');
 const assert = require('assert');
 const bodyParser = require('body-parser');
 const MongoStore = require('connect-mongo');
-const Base64 = require('crypto-js/enc-base64');
+const crypto = require('crypto');
 var session = require('express-session');
 var db;
 var MongoClient = require('mongodb').MongoClient;
@@ -41,15 +41,13 @@ app.post("/reg",  function (req, res) {
     if(!req.body.name) return res.sendStatus(400);
     if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
-    var name = req.body.name
-    if (name.includes("@") || name.includes("#") || name.includes("z")) return res.redirect("/app");
-    if (collection.findOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)})) { 
+    var name = req.body.name;
+    if (collection.findOne({"name": req.body.name})) { 
       res.redirect("/reg");
       return;
     } else {
-      collection.insertOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)}); 
-      res.cookie('acc', req.body.name + "@" + req.body.pass, { maxAge: 900000, httpOnly: true })
-      res.redirect("/app"); 
+      collection.insertOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+      res.redirect("/login"); 
     }
 });
 app.get('/login', function (req,res) {
@@ -59,7 +57,7 @@ app.post("/login",  function (req, res) {
     if(!req.body.name) return res.sendStatus(400);
     if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
-    let data = collection.findOne({"name": req.body.name,"password": Base64.stringify(req.body.pass)}); 
+    let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
     if (!data) { 
       res.redirect("/reg");
     } else {
