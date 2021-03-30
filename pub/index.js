@@ -113,9 +113,11 @@ if (window.location.href.startsWith("https://fakimaku.xyz/login") || window.loca
   const urlParams = new URLSearchParams(queryString);
   var err = urlParams.get("err");
   if(err) {
-    var errdiv = document.createElement("div");
+    const gendiv = document.getElementById("idkbox")
+    const errdiv = document.createElement("div");
     errdiv.className = "alert alert-warning"
     errdiv.textContent = err
     errdiv.role = "alert"
+    gendiv.appendChild(errdiv);
   }
 }
