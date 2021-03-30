@@ -22,7 +22,6 @@ app.use(express.static("pub"));
 app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.cookieDecoder());
 app.use(session({
   secret: '202103',
   resave: false,
