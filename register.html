@@ -35,7 +35,7 @@
                                 <br \>
                   <label for="pass">Введите пароль:</label>
 
-               <input type="text" name="pass" placeholder="hunter1337" minlength="8" maxlength="20" required />
+               <input type="text" name="pass" placeholder="hunter1337" title="Разрешено использовать только пробелы, цифры и латинские буквы, не менее 6 и максимум 20" pattern="^[A-Za-zА-Яа-яЁё-0-9\s]{6,20}" required />
                                 <br \>
                <button type="submit" class="submit">Регистрация</button>
               </div> 
