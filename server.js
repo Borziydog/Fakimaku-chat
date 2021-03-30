@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const MongoStore = require('connect-mongo');
 const crypto = require('crypto');
 var session = require('express-session');
+var cookieParser = require('cookie-parser')
 var db;
 var MongoClient = require('mongodb').MongoClient;
 const client = new MongoClient(config.mongo_linc,  { useNewUrlParser: true, useUnifiedTopology: true } );
@@ -18,9 +19,10 @@ client.connect(function(err) {
 });
 app.set('view engine', 'ejs');
 app.use(express.static("pub"));
+app.use(cookieParser())
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(express.cookieDecoder());
+app.use(express.cookieDecoder());
 app.use(session({
   secret: '202103',
   resave: false,
@@ -42,12 +44,11 @@ app.post("/reg",  function (req, res) {
     if(!req.body.pass) return res.sendStatus(400);
     const collection = db.collection('users');
     var name = req.body.name;
-    if (collection.findOne({"name": req.body.name})) { 
-      res.redirect("/reg");
-      return;
-    } else {
+    if (!collection.findOne({"name": req.body.name})) { 
       collection.insertOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
       res.redirect("/login"); 
+      } else {
+      res.redirect("/reg");
     }
 });
 app.get('/login', function (req,res) {
@@ -62,16 +63,17 @@ app.post("/login",  function (req, res) {
       res.redirect("/reg");
     } else {
       if(data.password !== crypto.createHash('md5').update(req.body.pass).digest('hex')) return res.redirect("/login");
-      req.session.user = data;
+      res.cookie('acc', req.body.name + "$" + crypto.createHash('md5').update(req.body.pass).digest('hex'), { maxAge: 900000, httpOnly: true });
       res.redirect("/app");
     }
 });
 app.get('/app', function (req, res) {
-  if (!req.session.user) {
+  var cookie = req.cookies.acc;
+  if (cookie === undefined) {
     res.redirect("/reg")
   } else {
     const collection = db.collection('users');
-    let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
+    let data = collection.findOne({"name": cookie.split("$")[0],"password": cookie.split("$")[1]}); 
     if (!data) {
       res.render("Messenger");
     } else {
