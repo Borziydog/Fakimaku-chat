@@ -108,3 +108,14 @@ var isFirefox = window.navigator.userAgent.includes('Firefox');
 if(isFirefox) {
 alert('Отправка сообщений и отображение сообщений работают плохо на браузере Mozilla Firefox!\nИмейте в виду...');
 }
+if (window.location.href.startsWith("https://fakimaku.xyz/login") || window.location.href.startsWith("https://fakimaku.xyz/reg")) {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  var err = urlParams.get("err");
+  if(err) {
+    var errdiv = document.createElement("div");
+    errdiv.className = "alert alert-warning"
+    errdiv.textContent = err
+    errdiv.role = "alert"
+  }
+}
