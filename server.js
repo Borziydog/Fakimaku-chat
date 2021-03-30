@@ -46,7 +46,7 @@ app.post("/reg",  function (req, res) {
     if (!collection.findOne({"name": req.body.name})) { 
       collection.insertOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
       res.cookie('acc', req.body.name + "$" + crypto.createHash('md5').update(req.body.pass).digest('hex'), { maxAge: 900000, httpOnly: true });
-      res.redirect("/app"); 
+      res.redirect("/"); 
       } else {
       res.redirect("/reg?err=Аккаунт+с+таким+именем+уже+существует");
     }
