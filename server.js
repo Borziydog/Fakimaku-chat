@@ -45,9 +45,10 @@ app.post("/reg",  function (req, res) {
     var name = req.body.name;
     if (!collection.findOne({"name": req.body.name})) { 
       collection.insertOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
-      res.redirect("/login"); 
+      res.cookie('acc', req.body.name + "$" + crypto.createHash('md5').update(req.body.pass).digest('hex'), { maxAge: 900000, httpOnly: true });
+      res.redirect("/app"); 
       } else {
-      res.redirect("/reg");
+      res.redirect("/reg?err=Аккаунт+с+таким+именем+уже+существует");
     }
 });
 app.get('/login', function (req,res) {
@@ -59,7 +60,7 @@ app.post("/login",  function (req, res) {
     const collection = db.collection('users');
     let data = collection.findOne({"name": req.body.name,"password": crypto.createHash('md5').update(req.body.pass).digest('hex')}); 
     if (!data) { 
-      res.redirect("/reg");
+      res.redirect("/login?err=Аккаунта+с+таким+именем+не+существует");
     } else {
       if(data.password !== crypto.createHash('md5').update(req.body.pass).digest('hex')) return res.redirect("/login");
       res.cookie('acc', req.body.name + "$" + crypto.createHash('md5').update(req.body.pass).digest('hex'), { maxAge: 900000, httpOnly: true });
