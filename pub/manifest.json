@@ -1,0 +1,20 @@
+{
+  "short_name": "Fakimaku",
+  "name": "Fakimaku",
+  "icons": [
+    {
+      "src": "https://m4r5ha11.com/assets/icon.png",
+      "type": "image/icon",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://m4r5ha11.com/assets/bigicon.png",
+      "type": "image/icon",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/join?mobile=true",
+  "background_color": "#44464A",
+  "display": "standalone",
+  "theme_color": "#a5d6ff"
+}
