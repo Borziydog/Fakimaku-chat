@@ -1,6 +1,6 @@
 {
   "name": "fakimaku",
-  "version": "0.0.4",
+  "version": "1.3.2",
   "description": "Fakimaku - anon chat",
   "main": "server.js",
   "scripts": {
