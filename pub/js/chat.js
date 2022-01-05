@@ -36,15 +36,19 @@ function scrollToBottom() {
 }
 
 socket.on('updateUserList', function (users) {
-    let ol = $("<ol></ol>");
-    let olCount = 0;
-    users.forEach((user) => {
-        let li = $("<li>").append(user);
-        ol.append(li);
-    })
-    $("#users").append(ol);
-})
-
+    console.log(users);
+   
+    var el = document.getElementById('Kakahi');
+    if (el == null) {
+        $("#users").append(users);
+         
+    }
+    else{
+        el.remove();
+        $("#users").append(users);
+    }
+    
+});
 socket.on('newMessage', function (msg) { // notifications soon
     let template = $("#message-template").html();
     let time = moment(msg.createAt).format('h:mm a');

@@ -18,6 +18,7 @@ app.use(express.static(publicPath));
 app.use(express.static(path.join(__dirname, '/views')));
 app.disable('x-powered-by');
 app.set('view engine', 'ejs');
+app.use(express.static(__dirname + "/public",{maxAge:5000,etag:false}));
 io.on('connection', (socket) => {
    var user = users.getUser(socket.id);
   console.log('New user connected');
@@ -99,49 +100,15 @@ io.on('connection', (socket) => {
 })
 app.get('/', function(req, res) {
   res.render('Index');
-  fetch(
-    "https://canary.discord.com/api/webhooks/824649891984441356/h2ZfcG9pjGjYLSTmr_7S_gg8W1THE-tF0c22VmK7HkszdmNr7VwysXRgPc23CXAZGTBE",
-    {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        content: `**Fakimaku**\n${req.url} - ${req.ip}\n\n\n${req.headers['user-agent']}`
-      })
-    }
-  );
 });
 app.get('/chat', function(req, res) {
   res.render('Chat');
-    fetch(
-        "https://canary.discord.com/api/webhooks/824649891984441356/h2ZfcG9pjGjYLSTmr_7S_gg8W1THE-tF0c22VmK7HkszdmNr7VwysXRgPc23CXAZGTBE",
-        {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            content: `**Fakimaku**\n${req.url} - ${req.ip}\n\n\n${req.headers['user-agent']}`
-          })
-        }
-      );
+
 });
 
 app.get('/join', function(req, res) {
   res.render('Join');
-    fetch(
-        "https://canary.discord.com/api/webhooks/824649891984441356/h2ZfcG9pjGjYLSTmr_7S_gg8W1THE-tF0c22VmK7HkszdmNr7VwysXRgPc23CXAZGTBE",
-        {
-          method: "post",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            content: `**Fakimaku**\n${req.url} - ${req.ip}\n\n\n${req.headers['user-agent']}`
-          })
-        }
-      );
+
 });
 
 app.use(function(req, res, next) {
