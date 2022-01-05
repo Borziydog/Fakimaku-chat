@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fakimaku available rooms</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/chat.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%- include('components/head'); %>
+</head>
+<body>
+  <%- include('components/header'); %>
+<h1>Rooms:</h1>
+<br><p><%= roomslist %></p>
+
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/js/libs/mustache.js"></script>
+  <script type="text/javascript" src="/js/libs/moment.js"></script>
+  <script type="text/javascript" src="/js/chat.js"></script>
+</body>
+</html>

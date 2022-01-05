@@ -13,8 +13,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/",
+  "start_url": "/join?mobile=true",
   "background_color": "#44464A",
   "display": "standalone",
-  "theme_color": "#512da8"
+  "theme_color": "#a5d6ff"
 }

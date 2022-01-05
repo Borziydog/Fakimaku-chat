@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+body {
+  background: floralwhite;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.form_container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+  line-height: 32px;
+}
+
+.form_container form {
+  max-width: 380px;
+  width: 100%;
+  padding: 20px 30px 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: gainsboro;
+  outline: none;
+}
+
+.form_container label {
+  display: block;
+}
+.form_container input {
+  width: 100%;
+  height: 35px;
+  margin-top: 5px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  border: 1px solid #3498db; 
+  outline: none; 
+  border-radius: 5px;
+  /* border: 0; */
+}
+.rooms {
+  background-color: #eee;
+}
+.form_field + .form_field{
+  margin-top: 20px;
+}
+
+.form_container button {
+  width: 100%;
+  height: 40px;
+  background-color: cornflowerblue;
+  border-radius: 10px;
+ border: 0;
+ font-size: 20px;
+ font-family: 'Ubuntu', sans-serif;
+ font-weight: 700;
+ color: #fff;
+}

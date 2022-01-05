@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Fakimaku - анонимный чат!</title>
+        <link rel="stylesheet" href="css/main-page.css">
+    <link rel="icon" href="https://m4r5ha11.com/assets/icon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#a5d6ff">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:url" content="https://fakimaku.glitch.me/"> -->
+    <meta property="og:title" content="Fakimaku">
+    <meta property="og:description" content="Легковесная web-альтернатива анонимным-чатам в Telegram и в других приложениях. Прямо в браузере, бесплатно!">
+<meta name="keywords" content="дискорд, общение, телеграм, телеграмм, чат, чаты, групповое общение, чат бесплатно, общение бесплатно, бесплатно, fakimaku, Fakimaku, факимаку, Факимаку, анон-чатам, анон, анонимный, web-альтернатива, тг, анон чат, анонимный чат, в, бесплатно, сс">
+      <meta http-equiv="content-language" content="ru">
+<meta name="msapplication-starturl" content="/join">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="msapplication-TileColor" content="#a5d6ff">
+<link rel="manifest" href="/manifest.json">
+<meta property="og:image" content="https://m4r5ha11.com/assets/bigicon.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/eta"></script>
+ 
+    
+    <%- include('components/head'); %>
+</head>
+  <body style="background-color: #808080;">
+    
+    <%- include('components/header'); %>
+    <div id="loader"></div>
+    <div id="content">
+       <h1 class="slogan">Ваше анонимное место для общения.<br>Прямо в браузере, бесплатно!</h1>
+      <a href="/join?st=1"><button class="open">Начать общение!</button></a>
+       <footer>
+     <hr class="solid">
+       <h1 class="footer-h1">Bаше анонимное место для общения</h1>
+         <br><a class="link" href="/devs"><p>Разработчики</p></a>
+         <br><a class="link" href="/rules"><p>Правила</p></a>
+  </footer>
+  <script src="js/mainpage.js"></script>
+  <script src="js/material.min.js"></script>
+  </body>
+</html>
