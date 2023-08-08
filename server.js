@@ -39,7 +39,7 @@ io.on('connection', (socket) => {
     // io.to(params.room).emit('newMessage', generateMessage('', `${params.name} joined`))
     socket.broadcast.to(params.room).emit('newMessage', generateMessage('', `${params.name} joined`))
      fetch(
-        "https://canary.discord.com/api/webhooks/824649891984441356/h2ZfcG9pjGjYLSTmr_7S_gg8W1THE-tF0c22VmK7HkszdmNr7VwysXRgPc23CXAZGTBE",
+        "",
         {
           method: "post",
           headers: {
@@ -84,7 +84,7 @@ io.on('connection', (socket) => {
       io.to(user.room).emit('updateUserList', users.getUserList(user.room));
       io.to(user.room).emit('newMessage', generateMessage('', `${user.name} ушёл`));
          fetch(
-        "https://canary.discord.com/api/webhooks/824649891984441356/h2ZfcG9pjGjYLSTmr_7S_gg8W1THE-tF0c22VmK7HkszdmNr7VwysXRgPc23CXAZGTBE",
+        "",
         {
           method: "post",
           headers: {
