@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import styles from "./styles.module.css";
+import styles from "./mainpage.module.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";

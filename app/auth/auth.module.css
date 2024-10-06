@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-display: swap;
+    src: url(../fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+}
+.enterbutton {
+    display: block;
+    border-radius: 7px 60px 17px 47px;
+    background: linear-gradient(165.44deg, rgb(231, 0, 0) -71.797%,rgb(10, 9, 9) 131.089%);
+    font-family: Rubik;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 504px;
+    height: 112.8px;
+    margin-top: 30px;
+}
+.FlexCont {
+    display: flex;
+}
+.FlexCont form {
+    width: 100%;
+}
+.NewsContainer {
+    width: 50%;
+    margin-top: 30px;
+}
+.NewsContainer h2 {
+    font-size: 48px;
+}
+
+.authcontainter {
+    width: 90%;
+    height: 80%;
+    background-color: #0B0B0B;
+    margin: 86px auto auto auto;
+    font-family: Rubik;
+    border-radius: 30px;
+    padding-bottom: 30px;
+}
+.authinside {
+    width: 90%;
+    margin: auto;
+}
+.authcontainter h1 {
+    font-size: 96px;
+    font-weight: 500;
+
+}
+.authcontainter h2 {
+    font-size: 48px;
+
+}
+.authcontainter h4 {
+    font-size: 20px;
+    color: #A4A4A4;
+}
+.authcontainter .input {
+    margin-top: 26px;
+}
+.authcontainter .input input {
+    background-color: transparent;
+    height: 40px;
+    font-size: 32px;
+    width: 500px;
+    outline:none;
+}
+.authcontainter .input hr {
+    background-color: #AA0404;
+    border-color: #AA0404;
+    height: 4px;
+    width: 500px;
+
+}
+
+.NewsContainer {
+    width: 55%;
+}
+.NewsCardscontainter {
+    margin-top: 30px;
+    overflow-y: auto;
+    overflow-x: none;
+    height: 600px;
+}
+.NewsCard {
+    margin-top: 20px;
+    width: 500px;
+    background-color: #1D1D1D;
+    border-radius: 22px;
+}
+.NewsCard h3 {
+    padding-top: 20px;
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+}
+.NewsCard h4 {
+    padding-top: 20px;
+    font-size: 20px;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.FlexCont form h5 {
+
+    
+}
+.FlexCont form a {
+    margin-top: 10px;
+    color: #0500FF;
+    
+}
