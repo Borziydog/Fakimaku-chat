@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #cacaca;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,5 +23,14 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-display: swap;
+    src: url(./fonts/Rubik-VariableFont_wght.ttf) format('truetype');
   }
 }

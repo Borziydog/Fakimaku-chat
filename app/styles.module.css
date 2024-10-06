@@ -1,0 +1,80 @@
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-display: swap;
+    src: url(./fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+}
+
+.mainpage {
+    font-family: Rubik;
+}
+
+.mainblock {
+    margin-top: 10%;
+    display: flex;
+}
+.mainblock img {
+    width: 50%;
+}
+.info {
+    width: 50%;
+    margin-top: 70px;
+}
+.info h1 {
+    font-size: 96px;
+    font-weight: 700;
+    text-align: center;
+}
+.info h2  {
+    font-size: 32px;
+    font-weight: 300;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.enterbutton {
+    display: block;
+    border-radius: 7px 60px 17px 47px;
+    background: linear-gradient(165.44deg, rgb(231, 0, 0) -71.797%,rgb(10, 9, 9) 131.089%);
+    font-family: Rubik;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 38px;
+    letter-spacing: 0%;
+    text-align: center;
+    width: 504px;
+    height: 112.8px;
+    margin: auto;
+}
+.infocontainter {
+    width: 80%;
+    margin: auto;
+    margin-top: 10%;
+}
+.infocontainter h2 {
+    text-align: center;
+    font-size: 48px;
+}
+.infoblock {
+    display: flex;
+}
+.infoblock div {
+    width: 50%;
+    margin: auto;
+}
+.infoblock img {
+    margin: auto;
+}
+.infoblock h3 {
+    font-size: 32px;
+}
+.footer {
+    margin-top: 10%;
+    padding-bottom: 10%;
+}
+.footer h2 {
+    font-size: 66px;
+    text-align: center;
+    font-weight: 200;
+    padding-bottom: 20px;
+}
