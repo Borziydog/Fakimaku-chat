@@ -2,7 +2,7 @@
     font-family: 'Rubik';
     font-style: normal;
     font-display: swap;
-    src: url(../fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+    src: url(../fonts/Rubik.ttf) format('truetype');
 }
 .enterbutton {
     display: block;
@@ -104,10 +104,7 @@
     margin: auto;
     padding-bottom: 20px;
 }
-.FlexCont form h5 {
 
-    
-}
 .FlexCont form a {
     margin-top: 10px;
     color: #0500FF;

@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000;
+  --background: #060C24;
   --foreground: #cacaca;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #060C24;
     --foreground: #ededed;
   }
 }
@@ -31,6 +31,6 @@ body {
     font-family: 'Rubik';
     font-style: normal;
     font-display: swap;
-    src: url(./fonts/Rubik-VariableFont_wght.ttf) format('truetype');
+    src: url(./fonts/Rubik.ttf) format('truetype');
   }
 }
