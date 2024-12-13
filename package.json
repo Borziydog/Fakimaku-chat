@@ -20,6 +20,6 @@
     "express-ws": "^4.0.0",
     "moment": "^2.29.4",
     "node-fetch": "^2.6.7",
-    "socket.io": "^4.6.2"
+    "socket.io": "^4.8.1"
   }
 }
